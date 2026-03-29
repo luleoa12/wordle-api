@@ -32,6 +32,7 @@ jobs:
         run: |
           git config user.name "wordle-bot"
           git config user.email "bot@example.com"
+          DATE=$(date -u +"%m/%d/%Y")
           git add public/today.json
           git commit -m "Update Wordle answer for $DATE" || echo "No changes"
           git push "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:main
