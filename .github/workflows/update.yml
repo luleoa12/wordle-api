@@ -34,4 +34,4 @@ jobs:
           git config user.email "bot@example.com"
           git add public/today.json
           git commit -m "Update Wordle answer for $DATE" || echo "No changes"
-          git push
+          git push "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:main
